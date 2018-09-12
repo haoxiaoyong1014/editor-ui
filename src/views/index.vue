@@ -56,7 +56,7 @@ export default {
       console.log(res)
       // this.editorModel.content = res.content;
       this.customEditor=res.content;
-      console.log('hxy'+this.customEditor)
+      console.log('haoxy'+this.customEditor)
       tinymce.get('tinymceEditer').setContent(this.customEditor);
       /*this.$nextTick(() => {
         this.customEditor = tinymce.get("tinymceEditer");
