@@ -51,3 +51,5 @@
 5, 前端点击submit,服务端将其转换成 pdf文件
 
 服务端代码: <a href="https://github.com/haoxiaoyong1014/editor-service">editor-service</a>
+
+**更详细内容见博客:** https://blog.csdn.net/haoxiaoyong1014/article/details/82683428
