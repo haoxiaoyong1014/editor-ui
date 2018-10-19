@@ -52,6 +52,7 @@
 
 服务端代码: <a href="https://github.com/haoxiaoyong1014/editor-service">editor-service</a>
 
+
 #### 放到项目中遇到的问题修复
 
 * 问题描述1: 
@@ -102,3 +103,6 @@ editor.on('keyup', function (e) {
 后端在返回给前端html 的时候,在返回的内容上加上
 
 `respInfo.setContent("<div style=\"width: 595.0pt; margin: -72.0pt -90.0pt -72.0pt -90.0pt !important;\">"+content+"</div>")`
+
+**更详细内容见博客:** https://blog.csdn.net/haoxiaoyong1014/article/details/82683428
+
