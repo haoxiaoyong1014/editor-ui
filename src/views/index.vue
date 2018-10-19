@@ -54,7 +54,6 @@ export default {
   methods: {
     handleSuccess(res){
       console.log(res)
-      // this.editorModel.content = res.content;
       this.customEditor=res.content;
       console.log('haoxy'+this.customEditor)
       tinymce.get('tinymceEditer').setContent(this.customEditor);
@@ -64,7 +63,7 @@ export default {
     },
     init () {
       this.$nextTick(() => {
-        let vm = this;
+        let vm = this
         let height = document.body.offsetHeight - 300;
         tinymce.init({
           selector: '#tinymceEditer',
@@ -90,14 +89,29 @@ export default {
           setup: function (editor) {
             editor.on('init', function (e) {
               vm.spinShow = false;
-              if (localStorage.editorContent) {
+             /* if (localStorage.editorContent) {
                 tinymce.get('tinymceEditer').setContent(localStorage.editorContent);
-              }
+              }*/
             });
+
             editor.on('keydown', function (e) {
+              console.log(localStorage.editorContent);
+              localStorage.editorContent = tinymce.get('tinymceEditer').getContent();
+              vm.editorModel.content = tinymce.get('tinymceEditer').getContent();
+              console.log("new content is : ")
+              console.log(localStorage.editorContent);
+            });
+            editor.on('keyup', function (e) {
               localStorage.editorContent = tinymce.get('tinymceEditer').getContent();
               vm.editorModel.content = tinymce.get('tinymceEditer').getContent();
             });
+            /* editor.addButton('example', {
+              title : 'example.desc',
+              image : 'https://avatars0.githubusercontent.com/u/32768756?s=460&v=4',
+              onclick : function() {
+                editor.windowManager.alert('Hello world!! Selection: ' + editor.selection.getContent({format : 'text'}));
+              }
+            }); */
           }
         });
         /*this.customEditor = tinymce.get("tinymceEditer");*/
